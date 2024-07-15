@@ -32,6 +32,24 @@ There are 3 questions and there should be at least 3 separate commits, at least 
 2. For what size class is a 2:1 odds bet fair.
 3. How much money would Brownlow be expected to end up with if the bets went as described.
 
+  
+Question 3:  How much money would Brownlow be expected to end up with if the bets went as described.
+  
+```{r}
+teachers <- numeric(40)
+for(i in 1:40){
+teachers[i] = BrLw()
+}
+```
+```{r}
+favstats(teachers)
+```
+  
+Using the data above, question 3 of Brownlow can be answered by providing that the mean amount a teacher would have `r mean(teachers)`.
+The standard deviation of this group `r sd(teachers)`. 
+The standard deviation subtracted twice from the mean is `r mean(teachers) -2*sd(teachers)` to `r mean(teachers) +2*sd(teachers)`. This is to subtract two times the mean and then add it two times. 
+  
+
 ## Our strategy is to build a Function and the use it to answer the three questions. 
 
 The function will be given a class_size by number of students, odds, and Number_of_times brownlow made the bet.  It will give you back how much Brownlows earnings were. We will use it to answer our three questions below. If you can, improve this function by giving default values to some of its inputs. 
