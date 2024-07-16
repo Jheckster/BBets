@@ -71,13 +71,21 @@ It is known that Brownlow is providing a 2:1 ratio bet for two people in class w
 
 
 
-
-
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
-
+```{r}
+teachers <- numeric(1000)
+for(i in 1:1000){
+teachers[i] = BrLw(odds=4.38)
+}
+```
+```{r}
+favstats(teachers)
+```
+  
+To confirm the number of fair odds for Brownlow we have calculated the mean of `r mean(teachers)`. For a bet of 1:40 odds compared to a 4.38 odds. This shows the odds of making money in my favor.
 
 
 
