@@ -67,14 +67,7 @@ The standard deviation subtracted twice from the mean is `r mean(teachers) -2*sd
 <!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
 
 It is known that Brownlow is providing a 2:1 ratio bet for two people in class with the same birthdays. To corroborate this information we will test the data and complete necessary data analysis to calculate the fair odds of the teachers earnings. We will be attempting to answer Question 1:  "What are the fair odds for a bet on matching birthdays in a 35 person class."
-
-
-
-
-# What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
-
-<!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
-
+  
 ```{r}
 teachers <- numeric(1000)
 for(i in 1:1000){
@@ -88,6 +81,21 @@ favstats(teachers)
 To confirm the number of fair odds for Brownlow we have calculated the mean of `r mean(teachers)`. For a bet of 1:40 odds compared to a 4.38 odds. This shows the odds of making money in my favor.
 
 
+# What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
+
+<!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
+
+```{r}
+teachers <- numeric(1000)
+for(i in 1:1000){
+teachers[i] = BrLw(numClass= 29)
+}
+```
+```{r}
+favstats(teachers)
+```
+
+This graph shows that the fair number of students would be 29, using this number we can calculate that we would be making $28. 
 
 
 
@@ -95,4 +103,8 @@ To confirm the number of fair odds for Brownlow we have calculated the mean of `
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
+
+
+
+
 
